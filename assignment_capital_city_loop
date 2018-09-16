@@ -1,0 +1,21 @@
+from capitals import capitals_dict
+import random
+
+
+def get_capital(state, capital):
+    while True:
+        guess = input("What is the capital of: {}? ".format(state))
+        if guess == "Exit".lower():
+            print("The capital of {} is: {}".format(state, capital))
+            print("Bye")
+            break
+        elif guess == capital.lower() or guess == capital:
+            print("That is correct!")
+            break
+        elif guess != capital.lower():
+            print("That is not correct, please try again")
+
+
+state = random.choice(list(capitals_dict.keys()))
+capital = capitals_dict[state]
+get_capital(state, capital)
